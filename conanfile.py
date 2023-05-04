@@ -20,7 +20,7 @@ class StonexCMSAMQPTestCases(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
-    requires = ["stonex-cms-amqp-test-framework/0.0.1@enterprise_messaging/test"]
+    requires = ["stonex-cms-amqp-test-framework/0.0.2@enterprise_messaging/test"]
     generators = "cmake"
 
     def config_options(self):
@@ -43,6 +43,5 @@ class StonexCMSAMQPTestCases(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = self.collect_libs()
-        pass
 
     
