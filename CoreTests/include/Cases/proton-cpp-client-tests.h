@@ -37,4 +37,4 @@ class CMSClientTestUnit;
 class TestCasePerformer;
 class TestMessageReceiver;
 
-TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTestUnit* uut = nullptr, TestCasePerformer *tcp = nullptr, TestMessageReceiver *tmr = nullptr);
+TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTestUnit* uut = nullptr, TestCasePerformer *tcp = nullptr);

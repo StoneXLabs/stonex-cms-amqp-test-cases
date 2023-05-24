@@ -26,22 +26,17 @@
 
 
 #include <Configuration/TestSuiteConfiguration.h>
-#include <UnitUnderTest/CMSClientTestUnit.h>
+#include <Wrapper/CMSClientTestUnit.h>
 #include <TestSuite/TestCasePerformer.h>
-#include <MessageReceiver/TestMessageReceiver.h>
+#include <TestSuite/TestCaseVerifier.h>
 
 
-TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTestUnit* uut, TestCasePerformer *tcp, TestMessageReceiver *tmr)
+TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTestUnit* uut, TestCasePerformer *tcp)
 {
 
 	bool test_ok{ true };
 
-
-
-
-
 	tcp->sendAll();
-	tmr->wait();
 
 
 	return TEST_CASE_STATUS::FINISHED;

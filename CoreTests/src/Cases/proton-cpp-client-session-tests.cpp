@@ -20,7 +20,7 @@
 #include <Cases/proton-cpp-client-session-tests.h>
 
 #include <Configuration/TestSuiteConfiguration.h>
-#include <UnitUnderTest/CMSClientTestUnit.h>
+#include <Wrapper/CMSClientTestUnit.h>
 #include <algorithm>
 
 /// <summary>
@@ -28,7 +28,7 @@
 /// Exceptions are tracked by user implemented exception listener
 /// </summary>
 /// <returns></returns>
-TEST_CASE_STATUS test_create_session(CMSClientTestUnit* uut, TestCasePerformer *tcp, TestMessageReceiver *tmr)
+TEST_CASE_STATUS test_create_session(CMSClientTestUnit* uut, TestCasePerformer *tcp)
 {
 
 
@@ -36,7 +36,7 @@ TEST_CASE_STATUS test_create_session(CMSClientTestUnit* uut, TestCasePerformer *
 
 }
 
-TEST_CASE_STATUS test_close_session(CMSClientTestUnit* uut, TestCasePerformer *tcp, TestMessageReceiver *tmr)
+TEST_CASE_STATUS test_close_session(CMSClientTestUnit* uut, TestCasePerformer *tcp)
 {
 	
 		try
