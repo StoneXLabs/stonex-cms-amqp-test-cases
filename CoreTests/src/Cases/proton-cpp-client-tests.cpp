@@ -38,6 +38,8 @@ TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTest
 
 	tcp->sendAll();
 
+	std::this_thread::sleep_for(std::chrono::milliseconds(500);
+
 
 	return TEST_CASE_STATUS::FINISHED;
 }
