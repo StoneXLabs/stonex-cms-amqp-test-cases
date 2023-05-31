@@ -22,6 +22,8 @@ target_include_directories(stonex-cms-amqp-core-test-cases
 
 target_link_libraries(stonex-cms-amqp-core-test-cases
 	CONAN_PKG::stonex-cms-amqp-test-framework
+	CONAN_PKG::stonex-cms-amqp-test-engine
+	CONAN_PKG::stonex-logger-wrapper
 	)
 
 
