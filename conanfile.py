@@ -36,7 +36,6 @@ class StonexCMSAMQPTestCases(ConanFile):
         if self.settings.os == "Windows":
             del self.options.fPIC
         if self.settings.arch == "x86":
-            self.options["stonex-cms-amqp-test-framework"].use_32_time_t = True
             self.options["protobuf"].use_32_time_t = True
 
     def source(self):
