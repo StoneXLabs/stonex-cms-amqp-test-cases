@@ -12,7 +12,7 @@ def get_verion_tag():
 class StonexCMSAMQPTestCases(ConanFile):
     name = "stonex-cms-amqp-test-cases"
     version = get_verion_tag()
-    license = "<Put the package license here>"
+    license = "Apache License 2.0"
     author = "krzysztof.obrebski@stonex.com"
     url = "<Package recipe repository url here, for issues about the package>"
     description = "cms client core test"
