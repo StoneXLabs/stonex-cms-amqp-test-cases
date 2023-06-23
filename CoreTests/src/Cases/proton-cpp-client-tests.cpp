@@ -31,7 +31,7 @@
 #include <TestSuite/TestCaseVerifier.h>
 
 
-TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTestUnit* uut, TestCasePerformer *tcp)
+TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTestUnit* uut, TestCasePerformer *tcp, TestCaseVerifier *tcv)
 {
 
 	bool test_ok{ true };
