@@ -1,6 +1,6 @@
 # stonex-cms-amqp-test-cases
 
-[1.2.0]
+[1.1.0]
 - use waiting receiver
 - change test method signature
 
