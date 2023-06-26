@@ -23,13 +23,8 @@
 
 class CMSClientTestUnit;
 class TestCasePerformer;
-class TestMessageReceiver;
+class TestCaseVerifier;
 
-class CompoundTestVerifier;
-
-
-
-TEST_CASE_STATUS test_create_connection( CMSClientTestUnit* uut = nullptr, TestCasePerformer *tcp = nullptr);
-
-TEST_CASE_STATUS test_stop_and_restart_connection( CMSClientTestUnit* uut = nullptr, TestCasePerformer *tcp = nullptr);
+TEST_CASE_STATUS test_create_connection( CMSClientTestUnit* uut = nullptr, TestCasePerformer *tcp = nullptr, TestCaseVerifier *tcv = nullptr);
+TEST_CASE_STATUS test_stop_and_restart_connection( CMSClientTestUnit* uut = nullptr, TestCasePerformer *tcp = nullptr, TestCaseVerifier *tcv = nullptr);
 

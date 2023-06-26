@@ -37,7 +37,7 @@
 /// Exceptions are tracked by user implemented exception listener
 /// </summary>
 /// <returns></returns>
-TEST_CASE_STATUS test_create_connection(CMSClientTestUnit* uut, TestCasePerformer *tcp)
+TEST_CASE_STATUS test_create_connection(CMSClientTestUnit* uut, TestCasePerformer *tcp, TestCaseVerifier* tcv)
 {
 
 
@@ -49,7 +49,7 @@ TEST_CASE_STATUS test_create_connection(CMSClientTestUnit* uut, TestCasePerforme
 /// Exceptions are tracked by user implemented exception listener
 /// </summary>
 /// <returns></returns>
-TEST_CASE_STATUS test_stop_and_restart_connection(CMSClientTestUnit* uut, TestCasePerformer *tcp)
+TEST_CASE_STATUS test_stop_and_restart_connection(CMSClientTestUnit* uut, TestCasePerformer *tcp, TestCaseVerifier* tcv)
 {
 
 

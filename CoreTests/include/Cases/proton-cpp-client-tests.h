@@ -30,11 +30,8 @@
 #include <TestSuite/TestCaseStatus.h>
 #include <Configuration/TestSuiteConfiguration.h>
 
-class CompoundTestVerifier;
-class CMSClientTestParams;
-
+class TestCaseVerifier;
 class CMSClientTestUnit;
 class TestCasePerformer;
-class TestMessageReceiver;
 
-TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTestUnit* uut = nullptr, TestCasePerformer *tcp = nullptr);
+TEST_CASE_STATUS test_create_producer_and_consumer_for_destination(CMSClientTestUnit* uut = nullptr, TestCasePerformer *tcp = nullptr, TestCaseVerifier *tcv = nullptr);
