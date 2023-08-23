@@ -23,33 +23,43 @@ class StonexCMSAMQPTestCases(ConanFile):
     generators = "cmake"
     
 
-    def build_requirements(self):
-        self.build_requires("stonex-cms-amqp-test-engine/2.0.0@enterprise_messaging/test")
-        self.build_requires("protobuf/3.20.1@enterprise_messaging/test")
-        self.build_requires("fmt/9.1.0@enterprise_messaging/test")
-        self.build_requires("boost/1.78.0@enterprise_messaging/stable")
-        self.build_requires("stonex-logger-wrapper/0.0.2@enterprise_messaging/test")
-        self.build_requires("stonex-cms-amqp-lib/0.2.3@enterprise_messaging/test")
+    def requirements(self):
+       	self.requires("stonex-cms-amqp-test-engine/None@enterprise_messaging/test")
+        if self.settings.os == "Windows":
+        	self.requires("protobuf/3.20.1@enterprise_messaging/test")
+        	self.requires("fmt/9.1.0@enterprise_messaging/test")
+        	self.requires("boost/1.78.0@enterprise_messaging/stable")
+        	self.requires("stonex-logger-wrapper/0.0.2@enterprise_messaging/test")
+        	self.requires("stonex-cms-amqp-lib/0.2.3@enterprise_messaging/test")
+		
 
     def config_options(self):
         if self.settings.os == "Windows":
             del self.options.fPIC
         if self.settings.arch == "x86":
             self.options["protobuf"].use_32_time_t = True
+        self.options["stonex-cms-amqp-test-engine"].shared = self.options.shared
+        self.options["stonex-cms-amqp-lib"].shared = self.options.shared
+        self.options["stonex-logger-wrapper"].shared = self.options.shared
+        self.options["red-hat-amq-clients-c++"].shared = self.options.shared
 
     def source(self):
          self.run("git clone https://github.com/StoneXLabs/stonex-cms-amqp-test-cases.git")
 
     def build(self):
         cmake = CMake(self)
+        if self.options.shared == False:
+            cmake.definitions["BUILD_STATIC_LIBS"]="ON"
         cmake.configure()
         cmake.build()
 
 
     def package(self):
-        self.copy("*.h", dst="include",src="CoreTests\include")
+        self.copy("*.h", dst="include",src="CoreTests/include")
         self.copy("*.lib", dst="lib",src="lib", keep_path=False)
         self.copy("*.pdb", dst="lib",src="lib", keep_path=False)
+        self.copy("*.a", dst="lib",src="lib", keep_path=False)
+        self.copy("*.so*", dst="lib",src="lib", keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = self.collect_libs()
